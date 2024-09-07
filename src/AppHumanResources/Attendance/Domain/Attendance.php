@@ -1,27 +1,20 @@
 <?php
-
 namespace AppHumanResources\Attendance\Domain;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Attendance extends Model
 {
-    protected $table = 'attendance'; 
+    protected $table = 'attendance';
+    protected $fillable = ['employee_id', 'schedule_id', 'checkin', 'checkout'];
 
-    protected $fillable = ['employee_id', 'checkin', 'checkout', 'total_hours', 'attendance_fault_id'];
-
-   
-    protected $casts = [
-        'employee_id' => 'integer',
-    ];
-    
     public function employee()
     {
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(\App\Models\Employee::class);
     }
 
-    public function attendanceFault()
+    public function schedule()
     {
-        return $this->belongsTo(AttendanceFault::class);
+        return $this->belongsTo(\App\Models\Schedule::class);
     }
 }

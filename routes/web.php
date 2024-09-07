@@ -18,7 +18,7 @@ Route::get('/', [AttendanceController::class, 'showAttendance'])->name('attendan
 Route::get('/find-array-duplicate-element', [AttendanceController::class, 'findArrayDuplicateElement'])->name('findArrayDuplicateElement');
 
 
-Route::post('/attendance/upload', [AttendanceController::class, 'uploadAttendance'])->name('attendance.upload');
+Route::post('/attendance/upload', [AttendanceController::class, 'upload'])->name('attendance.upload');
 
 
 
