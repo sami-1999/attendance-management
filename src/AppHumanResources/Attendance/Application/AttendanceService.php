@@ -6,6 +6,7 @@ use AppHumanResources\Attendance\Domain\Attendance;
 
 class AttendanceService
 {
+    
     public function calculateTotalHours($checkin, $checkout)
     {
         return $checkout->diffInHours($checkin);

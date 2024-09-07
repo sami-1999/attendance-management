@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/', [AttendanceController::class, 'showAttendance'])->name('attendance');
+
+
+Route::post('/attendance/upload', [AttendanceController::class, 'uploadAttendance'])->name('attendance.upload');
 
 
 
