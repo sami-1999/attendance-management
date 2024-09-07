@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('attendance', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employee_id')->constrained()->onDelete('cascade');
+            $table->foreignId('attendance_fault_id')->nullable()->constrained()->onDelete('set null');
             $table->dateTime('checkin')->nullable();
             $table->dateTime('checkout')->nullable();
             $table->float('total_hours')->nullable();
-            $table->foreignId('attendance_fault_id')->nullable()->constrained()->onDelete('set null');
             $table->timestamps();
         });
     }
