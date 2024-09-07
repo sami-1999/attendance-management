@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [AttendanceController::class, 'showAttendance'])->name('attendance');
+Route::get('/find-array-duplicate-element', [AttendanceController::class, 'findArrayDuplicateElement'])->name('findArrayDuplicateElement');
 
 
 Route::post('/attendance/upload', [AttendanceController::class, 'uploadAttendance'])->name('attendance.upload');

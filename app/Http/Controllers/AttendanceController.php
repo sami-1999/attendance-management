@@ -18,6 +18,31 @@ class AttendanceController extends Controller
         $this->attendanceService = $attendanceService;
     }
 
+    public function findArrayDuplicateElement($arr = [2, 3, 1, 2, 3]) {
+        $frequencyMap = [];
+        $duplicates = [];
+    
+        foreach ($arr as $num) {
+            if (isset($frequencyMap[$num])) {
+                $frequencyMap[$num]++;
+            } else {
+                $frequencyMap[$num] = 1;
+            }
+        }
+    
+
+        foreach ($frequencyMap as $num => $count) {
+            if ($count > 1) {
+                $duplicates[] = $num;
+            }
+        }
+    
+        return $duplicates;
+    }
+    
+
+    
+
     public function showAttendance()
     {
         $attendances = Attendance::with('employee')->get();

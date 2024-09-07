@@ -11,6 +11,8 @@
     <div class="container my-5">
         <h1 class="mb-4">Attendance Report</h1>
 
+        <a href="{{route('findArrayDuplicateElement')}}">Challange 2</a>
+
         <!-- Display success message -->
         @if(session('success'))
             <div class="alert alert-success">
